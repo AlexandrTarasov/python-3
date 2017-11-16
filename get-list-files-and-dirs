@@ -1,0 +1,23 @@
+import os
+
+def getsubs(dir):
+
+    # get all
+
+    dirs = []
+
+    files = []
+
+    for dirname, dirnames, filenames in os.walk(dir):
+
+        dirs.append(dirname)
+
+        for subdirname in dirnames:
+
+            dirs.append(os.path.join(dirname, subdirname))
+
+        for filename in filenames:
+
+            files.append(os.path.join(dirname, filename))
+
+    return dirs, files
